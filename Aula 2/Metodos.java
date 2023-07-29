@@ -36,7 +36,7 @@ public class Metodos {
         return media;
     }
 
-    public static int maiorValor(int[] valores) {
+    public static int maiorValor(int[] valores) { // pode usar o metodo Math.max
         int maior = 0;
         for (int valor : valores) {
             if (valor > maior) {
@@ -48,7 +48,7 @@ public class Metodos {
         return maior;
     }
 
-    public static int menorValor(int[] valores) {
+    public static int menorValor(int[] valores) { // pode usar o metodo Math.min
         int menor = 0;
         for (int valor : valores) {
             if (valor < menor) {
