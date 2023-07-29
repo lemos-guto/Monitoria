@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class Metodos {
 
     public static void main(String[] args) {
@@ -12,11 +14,16 @@ public class Metodos {
         valores[1] = 26;
         valores[2] = 78;
 
-        System.out.println(somaDosValores(numeros));
-        System.out.println(mediaAritimetica(numeros));
-        System.out.println(maiorValor(valores));
-        System.out.println(menorValor(valores));
+        DecimalFormat formatar = new DecimalFormat("0.00");
 
+        System.out.println("");
+        System.out.println("       Teste de metodos!");
+        System.out.println("------------------------------");
+        System.out.printf("A soma dos valores é: %s.%n", formatar.format(somaDosValores(numeros)));
+        System.out.printf("A media aritimetica é: %s.%n", formatar.format(mediaAritimetica(numeros)));
+        System.out.printf("O maior valor é: %d.%n", maiorValor(valores));
+        System.out.printf("O menor valor é: %d.%n", menorValor(valores));
+        System.out.println("");
     }
 
     public static double somaDosValores(double[] numeros) {
