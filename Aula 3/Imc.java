@@ -22,13 +22,8 @@ public class Imc {
         sn.close();
     }
 
-    public static double calcularImc (double peso, double altura){
-        double imc = peso / (altura * altura);
-        return imc;
-    }
-
     public static String verificarImc (double peso, double altura){
-        double imc = calcularImc(peso, altura);
+        double imc = peso / (altura * altura);
         String aviso = "";
         if (imc < 18.5){
             aviso = "baixo peso";
@@ -53,17 +48,17 @@ public class Imc {
     }
 
     public static String calcularDifereça (double peso, double altura, DecimalFormat formatar){
-        double imc = calcularImc(peso, altura);
+        double imc = peso / (altura * altura);
         double diferenca = 0.0;
         String aviso = "";
 
         if (imc < 24.9){
             diferenca = (24.9 - imc) * (altura * altura);   
-            aviso = "Para se adequar ao peso 'normal', você deve ganhar " + formatar.format(diferenca) + "kg.";
+            aviso = "Para se adequar ao peso 'normal', você deve ganhar " + formatar.format(diferenca) + "Kg.";
         }
         else if (imc > 24.9){
             diferenca = (imc - 24.9) * (altura * altura);
-            aviso = "Para se adequar ao peso 'normal', você deve perder " + formatar.format(diferenca) + "kg.";
+            aviso = "Para se adequar ao peso 'normal', você deve perder " + formatar.format(diferenca) + "Kg.";
         }
         else {
             aviso = "Seu peso é o ideal!";
