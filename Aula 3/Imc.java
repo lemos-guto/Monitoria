@@ -55,7 +55,7 @@ public class Imc {
         double imc = calcularIMC(peso, altura);;
         double diferenca = 0.0;
         String aviso = "";
-        final double PESONOMRAL = 20;
+        final double PESONOMRAL = 24.9;
 
         if (imc < PESONOMRAL){
             diferenca = (PESONOMRAL - imc) * (altura * altura);   
