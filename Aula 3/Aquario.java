@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class Aquario {
+    static Scanner sn = new Scanner (System.in);
+    private static double comprimento = 0.0;
+    private static double altura = 0.0;
+    private static double largura = 0.0;
+    static double temperaturaDesejada = 0.0;
+    static double temperaturaAmbiente = 0.0;
     public static void main(String[] args) {
-         Scanner sn = new Scanner (System.in);
-         double comprimento = 0.0;
-         double altura = 0.0;
-         double largura = 0.0;
-         double temperaturaDesejada = 0.0;
-         double temperaturaAmbiente = 0.0;
-
+         
          System.out.println("Digite o comprimento do seu aquário: ");
          comprimento = sn.nextDouble();
          System.out.println("Digite a altura do seu aquário: ");
@@ -26,6 +26,18 @@ public class Aquario {
          System.out.printf("A potencia do seu aquário deve ser de %d.", Math.round(calcularPotencia(volume, temperaturaDesejada, temperaturaAmbiente)));
          sn.close();
 
+    }
+
+    public Aquario(double comprimento, double altura, double largura){
+        this.comprimento = comprimento;
+        this.altura = altura;
+        this.largura = largura;
+    }
+
+    public Aquario(double lado){
+        comprimento = lado;
+        altura = lado;
+        largura = lado;
     }
 
     public static double calcularPotencia (double volume, double temperaturaDesejada, double temperaturaAmbiente){
