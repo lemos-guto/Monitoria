@@ -1,42 +1,39 @@
 package Java.Padaria;
 
 public class Produto {
-    int id;
-    String name;
-    double preco_produto;
-    double peso;
-    int quantidade;
+    private int id;
+    private String nome;
+    private double preco;
 
-    public Produto(int id, String name, double preco_produto) {
+    public Produto(int id, String nome, double preco) {
         this.id = id;
-        this.name = name;
-        this.preco_produto = preco_produto;
-
+        this.nome = nome;
+        this.preco = preco;
     }
 
-    public Produto(int id, String name, double preco_produto, int quantidade) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
         this.id = id;
-        this.name = name;
-        this.preco_produto = preco_produto;
-        this.quantidade = quantidade;
-
     }
 
-    public Produto(int id, String name, double preco_produto, double peso) {
-        this.id = id;
-        this.name = name;
-        this.preco_produto = preco_produto;
-        this.peso = peso;
-
+    public String getNome() {
+        return nome;
     }
 
-    public double calcularValor(Produto p) {
-        if (quantidade == 0) {
-            return preco_produto * peso;
-        } else if (peso == 0) {
-            return quantidade * preco_produto;
-        } else {
-            return 0;
-        }
+    public void setNome(String nome) {
+        this.nome = nome;
     }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+
 }

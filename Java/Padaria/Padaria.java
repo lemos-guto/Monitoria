@@ -13,21 +13,30 @@ public class Padaria {
         Produto cafe = new Produto(5, "Café Preto", 5.00);
         boolean continuar = true;
 
-        System.out
-                .println("Bem-vindo a Padaria do Mateus Cruzatto! Deseja realizar alguma compra?\n 1 - Sim\n 2 - Não");
+        System.out.println("Bem-vindo a Padaria do Mateus Cruzatto! Deseja realizar alguma compra?\n 1 - Sim\n 2 - Não");
         int inicio = sc.nextInt();
 
         if (inicio == 1) {
             while (continuar == true) {
-                System.out.println(
-                        "Qual produto deseja comprar?\n 1 - Pão Francês\n 2 - Pão Doce\n 3 - Pão Integral\n 4 - Pão Integral Doce\n 5 - Café Preto");
+                System.out.println("Qual produto deseja comprar?\n 1 - Pão Francês\n 2 - Pão Doce\n 3 - Pão Integral\n 4 - Pão Integral Doce\n 5 - Café Preto");
                 int produto = sc.nextInt();
 
                 switch (produto) {
                     case 1:
-                        System.out.println("Quantos pães deseja comprar?");
+                        System.out.println("Quantos pães francêses deseja comprar?");
                         break;
 
+                    case 2:
+                        System.out.println("Quantos pães doces deseja comprar?");
+                        break;
+
+                    case 3:
+                        System.out.println("Quantos pães intregrais deseja comprar?");
+                        break;
+
+                    case 4:
+                        System.out.println("Quantos pães intregrais doces deseja comprar?");
+                        break;
                     default:
                         break;
                 }

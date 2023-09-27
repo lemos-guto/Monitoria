@@ -1,25 +1,29 @@
 package Java.Padaria;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 public class Comanda {
     int id;
-    Map<String, Double> produtos = new HashMap<String, Double>();
-    double valorTotal = 0.0;
+    Queue<ItemVenda> produtos;
+    double valorTotal;
 
     public Comanda(int id) {
         this.id = id;
+        produtos = new LinkedList<ItemVenda>(); 
+        valorTotal = 0.0;
     }
 
     public void calcularValorTotal() {
-        for (Map.Entry<String, Double> entry : produtos.entrySet()) {
-            valorTotal += entry.getValue();
+        for (ItemVenda produto : produtos) {
+            valorTotal += produto.calcularValor();
         }
     }
 
-    public void adicionarProduto(Produto p, double valor) {
-        produtos.put(p.name, p.calcularValor(p));
+    public void adicionarProduto(ItemVenda produto) {
+        produtos.offer(produto);
     }
 
 }
