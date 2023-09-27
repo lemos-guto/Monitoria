@@ -18,7 +18,7 @@ public class Comanda {
         }
     }
 
-    public void adicionarProduto(Pedido p, int quantidade) {
+    public void adicionarProduto(Produto p, double valor) {
         produtos.put(p.name, p.calcularValor(p));
     }
 
