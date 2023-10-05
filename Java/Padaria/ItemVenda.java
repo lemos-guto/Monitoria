@@ -1,12 +1,12 @@
 package Java.Padaria;
 
-public class ItemVenda{
+public class ItemVenda {
     private int id;
     private Produto produto;
     private int quantidade;
     private double peso;
 
-    public ItemVenda(int id, Produto produto, int quantidade){
+    public ItemVenda(int id, Produto produto, int quantidade) {
         this.id = id;
         this.produto = produto;
         this.quantidade = quantidade;
@@ -25,7 +25,7 @@ public class ItemVenda{
             return produto.getPreco() * peso;
         } else {
             return quantidade * produto.getPreco();
-        } 
+        }
     }
 
     public int getId() {
@@ -41,7 +41,7 @@ public class ItemVenda{
     }
 
     public void setProduto(Produto produto) {
-        if(produto.equals(null)) {
+        if (produto.equals(null)) {
             throw new IllegalArgumentException("Produto não pode ser nulo.");
         }
         this.produto = produto;
@@ -52,7 +52,7 @@ public class ItemVenda{
     }
 
     public void setQuantidade(int quantidade) {
-        if(quantidade <= 0) {
+        if (quantidade <= 0) {
             throw new IllegalArgumentException("A quantidade não pode ser igual ou menor que zero.");
         }
         this.quantidade = quantidade;
@@ -63,7 +63,7 @@ public class ItemVenda{
     }
 
     public void setPeso(double peso) {
-        if(peso <= 0) {
+        if (peso <= 0) {
             throw new IllegalArgumentException("O peso não pode ser igual ou menor que zero.");
         }
         this.peso = peso;

@@ -1,57 +1,45 @@
 package Java.Padaria;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Padaria {
+    private List<Produto> estoque = new ArrayList<Produto>();
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Produto pao = new Produto(1, "Pão Francês", 0.50);
-        Produto paoDoce = new Produto(2, "Pão Doce", 0.75);
-        Produto paoIntegral = new Produto(3, "Pão Integral", 1.00);
-        Produto paoIntegralDoce = new Produto(4, "Pão Integral Doce", 1.25);
-        Produto cafe = new Produto(5, "Café Preto", 5.00);
-        boolean continuar = true;
+    public List<Produto> getEstoque() {
+        return estoque;
+    }
 
-        System.out.println("Bem-vindo a Padaria do Mateus Cruzatto! Deseja realizar alguma compra?\n 1 - Sim\n 2 - Não");
-        int inicio = sc.nextInt();
+    public void adicionarProduto(Produto produto) {
+        this.estoque.add(produto);
+    }
 
-        if (inicio == 1) {
-            while (continuar == true) {
-                System.out.println("Qual produto deseja comprar?\n 1 - Pão Francês\n 2 - Pão Doce\n 3 - Pão Integral\n 4 - Pão Integral Doce\n 5 - Café Preto");
-                int produto = sc.nextInt();
+    public void removerProduto(Produto produto) {
+        this.estoque.remove(produto);
+    }
 
-                switch (produto) {
-                    case 1:
-                        System.out.println("Quantos pães francêses deseja comprar?");
-                        break;
-
-                    case 2:
-                        System.out.println("Quantos pães doces deseja comprar?");
-                        break;
-
-                    case 3:
-                        System.out.println("Quantos pães intregrais deseja comprar?");
-                        break;
-
-                    case 4:
-                        System.out.println("Quantos pães intregrais doces deseja comprar?");
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
-        else if (inicio == 2) {
-            System.out.println("Obrigado pela visita!");
-            System.exit(0);
-        }
-
-        else {
-            System.out.println("Opção inválida!");
-            System.exit(0);
+    public void listarProdutos() {
+        for (Produto produto : estoque) {
+            System.out.println(produto);
         }
     }
 
+    public Produto buscarProduto(int id) {
+        for (Produto produto : estoque) {
+            if (produto.getId() == id) {
+                return produto;
+            }
+        }
+        return null;
+    }
+
+    public void alterarProduto(Produto produto) {
+        for (Produto produto2 : estoque) {
+            if (produto2.getId() == produto.getId()) {
+                produto2.setNome(produto.getNome());
+                produto2.setPreco(produto.getPreco());
+                return;
+            }
+        }
+    }
 }
